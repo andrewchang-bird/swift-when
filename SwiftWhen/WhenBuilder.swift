@@ -13,7 +13,7 @@ import Foundation
     return cases
   }
   
-  public static func buildBlock<R>(_ expressions: WhenExpression<R>...) -> [WhenExpression<R>] {
+  public static func buildBlock<R>(_ expressions: WhenNoArguementCase<R>...) -> [WhenNoArguementCase<R>] {
     return expressions
   }
 }

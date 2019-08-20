@@ -11,6 +11,13 @@ import Foundation
 public extension WhenBuilder {
   static func buildBlock<T: Comparable, R>(
     _ case1: WhenCase<T, R>,
+    _ defaultResult: @escaping () -> R
+  ) -> [WhenCase<T, R>] {
+    return [case1, WhenCase(result: defaultResult)]
+  }
+  
+  static func buildBlock<T: Comparable, R>(
+    _ case1: WhenCase<T, R>,
     _ case2: WhenCase<T, R>,
     _ defaultResult: @escaping () -> R
   ) -> [WhenCase<T, R>] {

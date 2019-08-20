@@ -19,7 +19,7 @@ infix operator =>: AssignmentPrecedence
   fatalError("No matching case for value: \(String(describing: value))")
 }
 
-@discardableResult public func when<R>(@WhenBuilder _ expressions: () -> [WhenExpression<R>]) -> R {
+@discardableResult public func when<R>(@WhenBuilder _ expressions: () -> [WhenNoArguementCase<R>]) -> R {
   for expression in expressions() {
     if expression.matches() {
       return expression.result()
